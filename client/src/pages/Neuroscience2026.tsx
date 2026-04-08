@@ -155,6 +155,13 @@ export default function Neuroscience2026() {
       {/* Header */}
       <header className="relative z-10 bg-gradient-to-b from-white to-gray-50 border-b border-gray-200/50 py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
+          <div className="flex items-center justify-center mb-6">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_jAMXqJ_tengrai_image_1765159705_282565_c2465d6c.png"
+              alt="LUZ Logo"
+              className="h-24 w-24 object-contain drop-shadow-lg"
+            />
+          </div>
           <div className="inline-block mb-4">
             <span className="text-sm font-mono text-yellow-600 tracking-wider">φ = 1.618...</span>
           </div>

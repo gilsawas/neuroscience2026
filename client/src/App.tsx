@@ -7,6 +7,27 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Neuroscience2026 from "./pages/Neuroscience2026";
 
+function Header() {
+  return (
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200/50 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_jAMXqJ_tengrai_image_1765159705_282565_c2465d6c.png"
+            alt="LUZ Logo"
+            className="h-10 w-10 object-contain"
+          />
+          <span className="font-audiowide text-lg text-gray-900 tracking-tight hidden sm:inline">The YON Synthesis</span>
+        </a>
+        <nav className="flex items-center gap-6">
+          <a href="/" className="text-gray-700 hover:text-gray-900 font-medium text-sm transition-colors">Home</a>
+          <a href="/neuroscience2026" className="text-gray-700 hover:text-gray-900 font-medium text-sm transition-colors">NEUROSCIENCE 2026</a>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -33,6 +54,7 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
+          <Header />
           <Router />
         </TooltipProvider>
       </ThemeProvider>
