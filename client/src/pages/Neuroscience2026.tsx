@@ -212,62 +212,13 @@ export default function Neuroscience2026() {
             <p className="text-lg text-gray-600 ml-16 font-light">ASTROPHYSICS 2026 Berlin - Our Research Alliance</p>
           </div>
 
-          {/* Speakers Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {[
-              {
-                name: 'Shepis',
-                role: 'Neuroscience & Consciousness',
-                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/9CcueHjxTksK7AUr2keR-fiHjv_4x-real-esrgan-x4-plus.jpg'
-              },
-              {
-                name: 'Eric J Needham',
-                role: 'Biological Systems',
-                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/ericjneedham.jpg'
-              },
-              {
-                name: 'Gunther Kletetschka',
-                role: 'Magnetism & Cosmology',
-                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/97k3XXn498Pbidsg0i6o-SEiKW_2x-real-esrgan-x4-plus.jpg'
-              },
-              {
-                name: 'Maes',
-                role: 'Complex Systems',
-                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/TZsmrg8KZIrdq4meYVgN--0--KQaKq.jpg'
-              },
-              {
-                name: 'Oztekin',
-                role: 'Medical Applications',
-                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/20260405_0131_image.png'
-              },
-              {
-                name: 'Strömme',
-                role: 'Quantum Biology',
-                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/0sEzviTkZV8aUcxlmWo7-CVRQS_4x-real-esrgan-x4-plus.jpg'
-              },
-            ].map((speaker, idx) => (
-              <div
-                key={idx}
-                className="bg-gradient-to-br from-white via-gray-50 to-white border-2 border-gray-300/50 rounded-xl p-6 shadow-sm hover:shadow-lg hover:border-yellow-400/50 transition-all duration-300 group"
-              >
-                <div className="mb-4 overflow-hidden rounded-lg">
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <h3 className="font-audiowide text-xl text-gray-900 mb-1 tracking-tight">
-                  {speaker.name}
-                </h3>
-                <p className="text-sm text-yellow-600 font-medium mb-3">
-                  {speaker.role}
-                </p>
-                <p className="text-xs text-gray-500 font-light">
-                  Contributing to the convergence of YON Theory with astrophysics and consciousness studies
-                </p>
-              </div>
-            ))}
+          {/* Conference Image */}
+          <div className="bg-white border-2 border-gray-300/50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group mb-8">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_iNmrlv_image.png"
+              alt="ASTROPHYSICS 2026 Berlin - Distinguished Speakers"
+              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+            />
           </div>
 
           {/* CTA Card */}
