@@ -272,36 +272,39 @@ export default function Neuroscience2026() {
       </main>
 
       {/* Newsletter Section */}
-      <section className="relative z-10 bg-gradient-to-r from-yellow-50 via-white to-red-50 border-t-2 border-yellow-400/50 py-16 px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-audiowide text-3xl text-gray-900 mb-4 tracking-tight">
-            Stay Updated
-          </h2>
-          <div className="h-0.5 w-16 mx-auto mb-6 bg-gradient-to-r from-yellow-500 to-red-700" />
-          <p className="text-gray-600 mb-8 font-light">
-            Subscribe to our newsletter for the latest research updates, articles, and conference announcements.
-          </p>
+      <section className="relative z-10 bg-gradient-to-br from-yellow-100 via-white to-red-100 border-t-4 border-yellow-500 py-20 px-4 shadow-lg">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="font-audiowide text-4xl text-gray-900 mb-4 tracking-tight">
+              Stay Updated
+            </h2>
+            <div className="h-1 w-20 mx-auto mb-6 bg-gradient-to-r from-yellow-500 via-red-700 to-yellow-500" />
+            <p className="text-lg text-gray-700 mb-2 font-light">
+              Subscribe to our newsletter for the latest research updates, articles, and conference announcements.
+            </p>
+            <p className="text-gray-600 text-sm">Join our growing community of researchers and innovators</p>
+          </div>
 
-          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 border border-gray-300/50 rounded-lg focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition-all duration-300 bg-white/80"
+              placeholder="Enter your email address"
+              className="flex-1 px-6 py-4 text-lg border-2 border-yellow-400 rounded-xl focus:outline-none focus:border-yellow-600 focus:ring-4 focus:ring-yellow-200 transition-all duration-300 bg-white shadow-md placeholder-gray-500 font-medium"
               required
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-red-700 text-white rounded-lg hover:from-yellow-600 hover:to-red-800 transition-all duration-300 font-semibold flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+              className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-red-700 text-white text-lg rounded-xl hover:from-yellow-600 hover:to-red-800 transition-all duration-300 font-bold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
             >
-              <Mail size={18} />
+              <Mail size={20} />
               Subscribe
             </button>
           </form>
 
           {subscribed && (
-            <p className="text-green-600 mt-4 font-semibold animate-pulse">
+            <p className="text-green-600 mt-6 font-bold text-lg animate-pulse text-center">
               ✓ Thank you for subscribing!
             </p>
           )}
