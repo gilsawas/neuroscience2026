@@ -215,7 +215,7 @@ export default function Neuroscience2026() {
           {/* Conference Image */}
           <div className="bg-white border-2 border-gray-300/50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group mb-8">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_iNmrlv_image.png"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_Uk4GEV_Captured'écran2026-04-08213924_2555b4ac.png"
               alt="ASTROPHYSICS 2026 Berlin - Distinguished Speakers"
               className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
             />
