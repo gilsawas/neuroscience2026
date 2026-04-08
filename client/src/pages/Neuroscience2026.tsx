@@ -70,33 +70,16 @@ const SECTIONS: Section[] = [
   },
 ];
 
-const getColorClasses = (color: 'gold' | 'bordeaux') => {
-  if (color === 'gold') {
-    return {
-      border: 'border-yellow-500',
-      hover: 'hover:bg-yellow-50 hover:shadow-md',
-      text: 'text-yellow-700',
-      bg: 'bg-yellow-50',
-      accent: 'from-yellow-100 to-transparent',
-    };
-  }
-  return {
-    border: 'border-red-700',
-    hover: 'hover:bg-red-50 hover:shadow-md',
-    text: 'text-red-700',
-    bg: 'bg-red-50',
-    accent: 'from-red-100 to-transparent',
-  };
-};
-
-const getTitleColor = (color: 'gold' | 'bordeaux') => {
-  return color === 'gold' ? 'text-yellow-600' : 'text-red-800';
-};
-
 const getGradientBg = (color: 'gold' | 'bordeaux') => {
   return color === 'gold'
-    ? 'bg-gradient-to-b from-yellow-50/30 to-transparent'
-    : 'bg-gradient-to-b from-red-50/30 to-transparent';
+    ? 'bg-gradient-to-br from-yellow-50 via-white to-yellow-50 border-l-4 border-yellow-500'
+    : 'bg-gradient-to-br from-red-50 via-white to-red-50 border-l-4 border-red-700';
+};
+
+const getAccentColor = (color: 'gold' | 'bordeaux') => {
+  return color === 'gold'
+    ? 'from-yellow-500 to-yellow-600'
+    : 'from-red-700 to-red-800';
 };
 
 // SVG Spirale de Fermat très discrète
@@ -186,8 +169,8 @@ export default function Neuroscience2026() {
             {/* Section Header */}
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-4">
-                <div className={`h-1 w-12 bg-gradient-to-r ${section.color === 'gold' ? 'from-yellow-500 to-yellow-600' : 'from-red-700 to-red-800'}`} />
-                <h2 className={`font-audiowide text-4xl ${getTitleColor(section.color)} tracking-tight`}>
+                <div className={`h-1 w-12 bg-gradient-to-r ${getAccentColor(section.color)}`} />
+                <h2 className="font-audiowide text-4xl text-gray-900 tracking-tight">
                   {section.title}
                 </h2>
               </div>
@@ -196,84 +179,113 @@ export default function Neuroscience2026() {
 
             {/* Content Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {section.cards.map((card, idx) => {
-                const colors = getColorClasses(section.color);
-                const isHovered = hoveredCard === card.id;
-                return (
-                  <div
-                    key={card.id}
-                    onMouseEnter={() => setHoveredCard(card.id)}
-                    onMouseLeave={() => setHoveredCard(null)}
-                    className={`
-                      aspect-square border-2 ${colors.border} rounded-lg p-6 cursor-pointer
-                      transition-all duration-300 flex flex-col items-center justify-center
-                      bg-white ${colors.hover}
-                      ${isHovered ? 'scale-105' : 'scale-100'}
-                    `}
-                    style={{
-                      transitionDelay: `${idx * 30}ms`,
-                    }}
-                  >
-                    <div className="text-center">
-                      <div className={`${colors.text} text-sm mb-2 font-light opacity-60`}>
-                        {card.title ? card.title : 'Click to add content'}
-                      </div>
-                      {card.description && (
-                        <p className="text-gray-600 text-xs">{card.description}</p>
-                      )}
-                    </div>
+              {section.cards.map((card) => (
+                <div
+                  key={card.id}
+                  onMouseEnter={() => setHoveredCard(card.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  className={`bg-white border-2 border-gray-200/50 rounded-lg p-8 flex items-center justify-center min-h-32 cursor-pointer transition-all duration-300 ${
+                    hoveredCard === card.id
+                      ? 'border-yellow-400 shadow-lg scale-105'
+                      : 'hover:border-gray-300'
+                  }`}
+                >
+                  <div className="text-center">
+                    <div className="text-gray-400 text-sm font-mono mb-2">{card.id}</div>
+                    <p className="text-gray-500 text-xs">Click to add content</p>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </section>
         ))}
 
-        {/* Conference Section */}
+        {/* Distinguished Speakers - Astrophysics 2026 Berlin */}
         <section className="mb-24 relative">
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-1 w-12 bg-gradient-to-r from-yellow-500 via-red-700 to-yellow-500" />
               <h2 className="font-audiowide text-4xl text-gray-900 tracking-tight">
-                NEUROSCIENCE 2026 Conference
+                Distinguished Speakers
               </h2>
             </div>
-            <p className="text-lg text-gray-600 ml-16 font-light">Event Information & Registration</p>
+            <p className="text-lg text-gray-600 ml-16 font-light">ASTROPHYSICS 2026 Berlin - Our Research Alliance</p>
           </div>
 
-          {/* Conference Info Card */}
-          <div className="bg-gradient-to-br from-white via-gray-50 to-white border-2 border-gray-300/50 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              {/* Image */}
-              <div className="bg-gradient-to-br from-gray-100 to-gray-50 rounded-lg overflow-hidden border border-gray-300/50 group">
-                <img
-                  src="https://astrophysics2026.pagesconferences.org/images/speakers.jpg"
-                  alt="NEUROSCIENCE 2026 Distinguished Speakers"
-                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect fill="%23f3f4f6" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="16" fill="%239ca3af"%3EConference Image%3C/text%3E%3C/svg%3E';
-                  }}
-                />
-              </div>
-
-              {/* Info & CTA */}
-              <div>
-                <h3 className="font-audiowide text-3xl text-gray-900 mb-4 tracking-tight">
-                  Distinguished Speakers
+          {/* Speakers Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {[
+              {
+                name: 'Shepis',
+                role: 'Neuroscience & Consciousness',
+                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/9CcueHjxTksK7AUr2keR-fiHjv_4x-real-esrgan-x4-plus.jpg'
+              },
+              {
+                name: 'Eric J Needham',
+                role: 'Biological Systems',
+                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/ericjneedham.jpg'
+              },
+              {
+                name: 'Gunther Kletetschka',
+                role: 'Magnetism & Cosmology',
+                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/97k3XXn498Pbidsg0i6o-SEiKW_2x-real-esrgan-x4-plus.jpg'
+              },
+              {
+                name: 'Maes',
+                role: 'Complex Systems',
+                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/TZsmrg8KZIrdq4meYVgN--0--KQaKq.jpg'
+              },
+              {
+                name: 'Oztekin',
+                role: 'Medical Applications',
+                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/20260405_0131_image.png'
+              },
+              {
+                name: 'Strömme',
+                role: 'Quantum Biology',
+                image: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/0sEzviTkZV8aUcxlmWo7-CVRQS_4x-real-esrgan-x4-plus.jpg'
+              },
+            ].map((speaker, idx) => (
+              <div
+                key={idx}
+                className="bg-gradient-to-br from-white via-gray-50 to-white border-2 border-gray-300/50 rounded-xl p-6 shadow-sm hover:shadow-lg hover:border-yellow-400/50 transition-all duration-300 group"
+              >
+                <div className="mb-4 overflow-hidden rounded-lg">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="font-audiowide text-xl text-gray-900 mb-1 tracking-tight">
+                  {speaker.name}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed font-light">
-                  Join leading neuroscientists, consciousness researchers, and AI pioneers at NEUROSCIENCE 2026 in Barcelona. Discover the latest breakthroughs in consciousness studies, temporal dynamics, and the future of artificial intelligence.
+                <p className="text-sm text-yellow-600 font-medium mb-3">
+                  {speaker.role}
                 </p>
-                <a
-                  href="https://astrophysics2026.pagesconferences.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-8 py-3 bg-gradient-to-r from-yellow-500 to-red-700 text-white rounded-lg hover:from-yellow-600 hover:to-red-800 transition-all duration-300 font-semibold shadow-md hover:shadow-lg"
-                >
-                  View Conference Details
-                </a>
+                <p className="text-xs text-gray-500 font-light">
+                  Contributing to the convergence of YON Theory with astrophysics and consciousness studies
+                </p>
               </div>
-            </div>
+            ))}
+          </div>
+
+          {/* CTA Card */}
+          <div className="bg-gradient-to-r from-yellow-50 to-red-50 border-2 border-yellow-400/50 rounded-xl p-8 text-center">
+            <h3 className="font-audiowide text-2xl text-gray-900 mb-3 tracking-tight">
+              Join the Conversation
+            </h3>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Our research alliance is presenting at ASTROPHYSICS 2026 Berlin. Discover how consciousness studies, temporal dynamics, and cosmology converge.
+            </p>
+            <a
+              href="https://astrophysics2026.pagesconferences.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-gradient-to-r from-yellow-500 to-red-700 text-white rounded-lg hover:from-yellow-600 hover:to-red-800 transition-all duration-300 font-semibold shadow-md hover:shadow-lg"
+            >
+              View ASTROPHYSICS 2026 Berlin
+            </a>
           </div>
         </section>
       </main>
@@ -322,17 +334,12 @@ export default function Neuroscience2026() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-3 bg-gradient-to-r from-yellow-500 to-red-700 text-white rounded-full hover:from-yellow-600 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-xl animate-fade-in"
+          className="fixed bottom-8 right-8 z-40 p-3 bg-gradient-to-r from-yellow-500 to-red-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
           aria-label="Scroll to top"
         >
           <ArrowUp size={24} />
         </button>
       )}
-
-      {/* Footer Accent */}
-      <div className="relative z-10 bg-white border-t border-gray-200/50 py-6 px-4 text-center text-xs text-gray-500 font-light">
-        <p>NEUROSCIENCE 2026 • Knowledge Library • φ = 1.618033988...</p>
-      </div>
     </div>
   );
 }
