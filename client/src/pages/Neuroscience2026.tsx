@@ -67,15 +67,15 @@ const SECTIONS: Section[] = [
       },
       {
         id: 'yon-5',
-        title: 'Symplectique YON',
-        description: 'Formulation Symplectique - Version Francaise',
+        title: 'Symplectic YON',
+        description: 'Symplectic Formulation - French Version',
         pdfUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_YcmmNa_yon_symplectique_v7_fr_FINAL(1)(1)_1fa3a287.pdf',
         icon: '🌀'
       },
       {
         id: 'yon-6',
-        title: 'Retro-Causalite Avancee',
-        description: 'Du Couplage Cosmique a la Singularite de Conscience',
+        title: 'Advanced Retro-Causality',
+        description: 'From Cosmic Coupling to Consciousness Singularity',
         pdfUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_cd1ldn_Rétro-Causalité_Avancée_Du_Couplage_Cosmique_à_la_Singularité_de_Conscience_63b8ce35.pdf',
         icon: '⏳'
       },
@@ -155,8 +155,8 @@ const SECTIONS: Section[] = [
       },
       {
         id: 'retro-3',
-        title: 'Temporalite Tridimensionnelle',
-        description: 'Nombre d Or & Causalite - 3T Foundation',
+        title: 'Three-Dimensional Temporality',
+        description: 'Golden Ratio & Causality - 3T Foundation',
         pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_temporalit%C3%A9-tridimensionnelle-nombre-dor-activity-7362634533675917312-2GfH?utm_source=share&utm_medium=member_desktop',
         icon: '⚡'
       },
@@ -324,7 +324,7 @@ export default function Neuroscience2026() {
                     <div className="text-center">
                       <p className="text-gray-900 font-semibold text-sm mb-1">{card.title}</p>
                       <p className="text-gray-500 text-xs">{card.description}</p>
-                      <p className="text-yellow-600 text-xs mt-2 font-mono">📥 Download PDF</p>
+                      <p className="text-yellow-600 text-xs mt-2 font-mono">📥 Download</p>
                     </div>
                   </a>
                 ) : (
@@ -340,7 +340,7 @@ export default function Neuroscience2026() {
                   >
                     <div className="text-center">
                       <div className="text-gray-400 text-sm font-mono mb-2">{card.id}</div>
-                      <p className="text-gray-500 text-xs">Click to add content</p>
+                      <p className="text-gray-500 text-xs">Coming soon</p>
                     </div>
                   </div>
                 )
