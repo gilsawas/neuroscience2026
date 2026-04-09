@@ -15,7 +15,7 @@ function Header() {
           <img
             src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_jAMXqJ_tengrai_image_1765159705_282565_c2465d6c.png"
             alt="LUZ Logo"
-            className="h-10 w-10 object-contain"
+            className="h-14 w-14 object-contain"
           />
           <span className="font-audiowide text-lg text-gray-900 tracking-tight hidden sm:inline">The YON Synthesis</span>
         </a>
