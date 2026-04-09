@@ -16,6 +16,8 @@ interface ContentCard {
   id: string;
   title?: string;
   description?: string;
+  pdfUrl?: string;
+  icon?: string;
 }
 
 interface Section {
@@ -34,7 +36,50 @@ const SECTIONS: Section[] = [
     subtitle: 'Consciousness & Cosmos',
     color: 'gold',
     index: 0,
-    cards: Array.from({ length: 6 }, (_, i) => ({ id: `yon-${i + 1}` })),
+    cards: [
+      {
+        id: 'yon-1',
+        title: 'Topos Formalization',
+        description: 'Study of YON through Grothendieck Topos Theory',
+        pdfUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_mmFrxy_ÉTUDE_TOPOS_POUR_FORMALISATION_YON(2)_ebae026c.pdf',
+        icon: '📐'
+      },
+      {
+        id: 'yon-2',
+        title: 'TDA & LUZ Fusion 5',
+        description: 'Topological Data Analysis & Classifiants for LUZ Architecture',
+        pdfUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_gxTfUs_classifiants_tda_luz_fusion_5_complet(3)_59972abf.pdf',
+        icon: '🔗'
+      },
+      {
+        id: 'yon-3',
+        title: 'LUZ Architecture',
+        description: 'Next-Generation AI Founded on Topological Harmony',
+        pdfUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_Vr7pk1_LUZ_Fusion_5_A_Next-Generation_Artificial_Intelligence_Architecture_Founded_on_Topological_Harmony_and_Temporal_Semantics_(YON_Theory)_24a86b31.pdf',
+        icon: '🧠'
+      },
+      {
+        id: 'yon-4',
+        title: 'Six Invariants',
+        description: 'YON Extended Paper - Mathematical Foundations',
+        pdfUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_bvnTsO_YON_Extended_Paper_Six_Invariants(6)_1c0c6abe.pdf',
+        icon: '✨'
+      },
+      {
+        id: 'yon-5',
+        title: 'Symplectique YON',
+        description: 'Formulation Symplectique - Version Francaise',
+        pdfUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_YcmmNa_yon_symplectique_v7_fr_FINAL(1)(1)_1fa3a287.pdf',
+        icon: '🌀'
+      },
+      {
+        id: 'yon-6',
+        title: 'Retro-Causalite Avancee',
+        description: 'Du Couplage Cosmique a la Singularite de Conscience',
+        pdfUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/pasted_file_cd1ldn_Rétro-Causalité_Avancée_Du_Couplage_Cosmique_à_la_Singularité_de_Conscience_63b8ce35.pdf',
+        icon: '⏳'
+      },
+    ],
   },
   {
     id: 'retro-causality',
@@ -180,21 +225,44 @@ export default function Neuroscience2026() {
             {/* Content Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {section.cards.map((card) => (
-                <div
-                  key={card.id}
-                  onMouseEnter={() => setHoveredCard(card.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  className={`bg-white border-2 border-gray-200/50 rounded-lg p-8 flex items-center justify-center min-h-32 cursor-pointer transition-all duration-300 ${
-                    hoveredCard === card.id
-                      ? 'border-yellow-400 shadow-lg scale-105'
-                      : 'hover:border-gray-300'
-                  }`}
-                >
-                  <div className="text-center">
-                    <div className="text-gray-400 text-sm font-mono mb-2">{card.id}</div>
-                    <p className="text-gray-500 text-xs">Click to add content</p>
+                card.pdfUrl ? (
+                  <a
+                    key={card.id}
+                    href={card.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => setHoveredCard(card.id)}
+                    onMouseLeave={() => setHoveredCard(null)}
+                    className={`bg-white border-2 border-gray-200/50 rounded-lg p-8 flex flex-col items-center justify-center min-h-32 cursor-pointer transition-all duration-300 group ${
+                      hoveredCard === card.id
+                        ? 'border-yellow-400 shadow-lg scale-105 bg-gradient-to-br from-yellow-50 to-white'
+                        : 'hover:border-gray-300'
+                    }`}
+                  >
+                    <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">{card.icon}</div>
+                    <div className="text-center">
+                      <p className="text-gray-900 font-semibold text-sm mb-1">{card.title}</p>
+                      <p className="text-gray-500 text-xs">{card.description}</p>
+                      <p className="text-yellow-600 text-xs mt-2 font-mono">📥 Download PDF</p>
+                    </div>
+                  </a>
+                ) : (
+                  <div
+                    key={card.id}
+                    onMouseEnter={() => setHoveredCard(card.id)}
+                    onMouseLeave={() => setHoveredCard(null)}
+                    className={`bg-white border-2 border-gray-200/50 rounded-lg p-8 flex items-center justify-center min-h-32 cursor-pointer transition-all duration-300 ${
+                      hoveredCard === card.id
+                        ? 'border-yellow-400 shadow-lg scale-105'
+                        : 'hover:border-gray-300'
+                    }`}
+                  >
+                    <div className="text-center">
+                      <div className="text-gray-400 text-sm font-mono mb-2">{card.id}</div>
+                      <p className="text-gray-500 text-xs">Click to add content</p>
+                    </div>
                   </div>
-                </div>
+                )
               ))}
             </div>
           </section>
