@@ -14,10 +14,14 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Umami Analytics (built-in) -->
     <script
       defer
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+    
+    <!-- Plausible Analytics (simple alternative) -->
+    <script defer data-domain="yonsynthes-ktpspubd.manus.space" src="https://plausible.io/js/script.js"></script>
   </body>
 
 </html>

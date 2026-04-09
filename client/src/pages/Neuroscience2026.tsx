@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, ArrowUp } from 'lucide-react';
+import { trpc } from '@/lib/trpc';
 
 /**
  * NEUROSCIENCE 2026 - Knowledge Library Page
@@ -231,13 +232,31 @@ export default function Neuroscience2026() {
   const [subscribed, setSubscribed] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const subscribeMutation = trpc.newsletter.subscribe.useMutation();
+
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail('');
-      setTimeout(() => setSubscribed(false), 3000);
+    if (!email) return;
+
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const result = await subscribeMutation.mutateAsync({ email });
+      if (result.success) {
+        setSubscribed(true);
+        setEmail('');
+        setTimeout(() => setSubscribed(false), 3000);
+      } else {
+        setError(result.message);
+      }
+    } catch (err) {
+      setError('Failed to subscribe. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
   };
 

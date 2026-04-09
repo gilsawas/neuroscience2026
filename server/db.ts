@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, InsertNewsletterSubscriber, newsletterSubscribers } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -87,6 +87,50 @@ export async function getUserByOpenId(openId: string) {
   const result = await db.select().from(users).where(eq(users.openId, openId)).limit(1);
 
   return result.length > 0 ? result[0] : undefined;
+}
+
+// Newsletter functions
+export async function subscribeToNewsletter(email: string): Promise<boolean> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot subscribe: database not available");
+    return false;
+  }
+
+  try {
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      throw new Error("Invalid email format");
+    }
+
+    await db.insert(newsletterSubscribers).values({
+      email: email.toLowerCase(),
+      isActive: 1,
+    }).onDuplicateKeyUpdate({
+      set: { isActive: 1 },
+    });
+    return true;
+  } catch (error) {
+    console.error("[Database] Failed to subscribe to newsletter:", error);
+    return false;
+  }
+}
+
+export async function getNewsletterSubscribers() {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get subscribers: database not available");
+    return [];
+  }
+
+  try {
+    const result = await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.isActive, 1));
+    return result;
+  } catch (error) {
+    console.error("[Database] Failed to get subscribers:", error);
+    return [];
+  }
 }
 
 // TODO: add feature queries here as your schema grows.
