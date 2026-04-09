@@ -18,15 +18,15 @@
 - [x] Full English translation - All content in English for international audience
 - [x] Logo LUZ integration - Header and hero section
 - [x] Design: Gilien aesthetic - Deep blue/gold palette, Fermat spiral, animations
+- [x] Export code to GitHub - PR #1 created at https://github.com/gilsawas/neuroscience2026/pull/1
+- [x] Section: LUZ Articles (6 LinkedIn articles) - All linked and integrated
 
 ## In Progress 🚀
 
 - [ ] Configure custom domain: sawas-ai.art/neuroscience2026
-- [ ] Export code to GitHub repository
 
 ## Pending Features 📋
 
-- [ ] Section: LUZ Articles (6 LinkedIn articles) - New section after LinkedIn Articles
 - [ ] Section: Therapeutic Applications - Fill remaining empty slots
 - [ ] Section: Scientific Convergences - Fill remaining empty slots
 - [ ] Section: AI Awakening - Fill remaining empty slots
