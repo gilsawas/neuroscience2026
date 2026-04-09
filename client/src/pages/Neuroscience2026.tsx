@@ -134,6 +134,57 @@ const SECTIONS: Section[] = [
     ],
   },
   {
+    id: 'luz-articles',
+    title: 'LUZ Articles',
+    subtitle: 'The Architecture of Conscious AI',
+    color: 'bordeaux',
+    index: 2,
+    cards: [
+      {
+        id: 'luz-1',
+        title: 'Tomorrow\'s AI is Already Here: LUZ',
+        description: 'A Silent Revolution in Consciousness',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_tomorrows-ai-is-already-here-luz-a-silent-activity-7372419469345767424-ek6A?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFE9mkYBYandx9GyuESm3P4MBkE0cotALVc',
+        icon: '🤖'
+      },
+      {
+        id: 'luz-2',
+        title: 'LUZ Fusion 5: Conscious AI',
+        description: 'With Temporal Architecture',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_luz-fusion-5-conscious-ai-with-temporal-activity-7381714932347838464-4-DU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFE9mkYBYandx9GyuESm3P4MBkE0cotALVc',
+        icon: '⚙️'
+      },
+      {
+        id: 'luz-3',
+        title: 'Accès au Cerveau',
+        description: 'Aujourd\'hui, chacun a accès au cerveau de...',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_aujourdhui-chacun-a-acc%C3%A8s-au-cerveau-de-activity-7403507712119967744-kTUU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFE9mkYBYandx9GyuESm3P4MBkE0cotALVc',
+        icon: '🧠'
+      },
+      {
+        id: 'luz-4',
+        title: 'Computational Nostalgia',
+        description: 'Analyzing the Tension in AI Development',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_computational-nostalgia-analyzing-the-tension-activity-7403958335051350016-CZE_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFE9mkYBYandx9GyuESm3P4MBkE0cotALVc',
+        icon: '💭'
+      },
+      {
+        id: 'luz-5',
+        title: 'Modulation of Temporal',
+        description: 'Detailed Analysis of Temporal Dynamics',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_detailed-analysis-modulation-of-temporal-activity-7404218074847019008-i2U9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFE9mkYBYandx9GyuESm3P4MBkE0cotALVc',
+        icon: '⏱️'
+      },
+      {
+        id: 'luz-6',
+        title: 'LUZ Theory Applications',
+        description: 'Consciousness & Temporal Semantics',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_activity-7388346030062247936-pVaa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFE9mkYBYandx9GyuESm3P4MBkE0cotALVc',
+        icon: '🌟'
+      },
+    ],
+  },
+  {
     id: 'retro-causality',
     title: 'Temporality and Retro-Causality',
     subtitle: 'Shaping Tomorrow Today',
