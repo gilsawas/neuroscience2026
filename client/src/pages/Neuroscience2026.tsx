@@ -83,11 +83,41 @@ const SECTIONS: Section[] = [
   },
   {
     id: 'retro-causality',
-    title: 'Retro-Causality',
+    title: 'Temporality and Retro-Causality',
     subtitle: 'Shaping Tomorrow Today',
     color: 'bordeaux',
     index: 1,
-    cards: Array.from({ length: 6 }, (_, i) => ({ id: `retro-${i + 1}` })),
+    cards: [
+      {
+        id: 'retro-1',
+        title: 'Free Will & Retro-Causality',
+        description: 'Mathematical and Philosophical Formulation',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_retrocausality-and-free-will-in-yon-theory-activity-7419851512308301825-Yozo?utm_source=share&utm_medium=member_desktop',
+        icon: '📚'
+      },
+      {
+        id: 'retro-2',
+        title: 'Advanced Retro-Causality',
+        description: 'From Cosmic Coupling to Consciousness Singularity',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_advanced-retrocausality-from-cosmic-coupling-activity-7447076308985245696-zeb_?utm_source=share&utm_medium=member_desktop',
+        icon: '🌌'
+      },
+      {
+        id: 'retro-3',
+        title: 'Temporalite Tridimensionnelle',
+        description: 'Nombre d Or & Causalite - 3T Foundation',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_temporalit%C3%A9-tridimensionnelle-nombre-dor-activity-7362634533675917312-2GfH?utm_source=share&utm_medium=member_desktop',
+        icon: '⚡'
+      },
+      {
+        id: 'retro-4',
+        title: 'Three-Dimensional Theory of Time',
+        description: 'Towards a New Understanding of Temporal Structure',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_towards-a-three-dimensional-theory-of-time-activity-7366573128761663488-UyJW?utm_source=share&utm_medium=member_desktop',
+        icon: '🔄'
+      },
+      ...Array.from({ length: 2 }, (_, i) => ({ id: `retro-${i + 5}` })),
+    ],
   },
   {
     id: 'therapeutic',
