@@ -82,6 +82,57 @@ const SECTIONS: Section[] = [
     ],
   },
   {
+    id: 'linkedin-articles',
+    title: 'LinkedIn Articles',
+    subtitle: 'Key Publications & Insights',
+    color: 'gold',
+    index: 1,
+    cards: [
+      {
+        id: 'linkedin-1',
+        title: 'Mathematical Properties of α_EM',
+        description: 'Analysis of Mathematical Properties of the Fine Structure Constant',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_analysis-of-mathematical-properties-of-%CE%B1-activity-7381432702559780864-r9_S?utm_source=share&utm_medium=member_desktop',
+        icon: '📊'
+      },
+      {
+        id: 'linkedin-2',
+        title: 'Maillot Invariant',
+        description: 'Topological Invariants & Mathematical Structure',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_maillot-invariant-activity-7381511091069095936-NwUc?utm_source=share&utm_medium=member_desktop',
+        icon: '🧬'
+      },
+      {
+        id: 'linkedin-3',
+        title: 'The YON Equation',
+        description: 'When the Golden Ratio Meets Consciousness',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_the-yon-equation-when-the-golden-ratio-activity-7396709765730459648-jvVK?utm_source=share&utm_medium=member_desktop',
+        icon: '✨'
+      },
+      {
+        id: 'linkedin-4',
+        title: 'Neurosciences & Consciousness',
+        description: 'Topological Data Analysis Approach',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_neurosciences-consciousness-topologicaldataanalysis-activity-7399184938748715009-GDRo?utm_source=share&utm_medium=member_desktop',
+        icon: '🧠'
+      },
+      {
+        id: 'linkedin-5',
+        title: 'YON Theory Applications',
+        description: 'Consciousness & Temporal Dynamics',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_activity-7388346030062247936-pVaa?utm_source=share&utm_medium=member_desktop',
+        icon: '🌟'
+      },
+      {
+        id: 'linkedin-6',
+        title: 'Grothendieck & Silence',
+        description: 'The Architect of Abstract Thought',
+        pdfUrl: 'https://www.linkedin.com/posts/gil-sawas-406568320_grothendieck-the-architect-of-silence-and-activity-7409317730992009217-IoR4?utm_source=share&utm_medium=member_desktop',
+        icon: '🌠'
+      },
+    ],
+  },
+  {
     id: 'retro-causality',
     title: 'Temporality and Retro-Causality',
     subtitle: 'Shaping Tomorrow Today',
