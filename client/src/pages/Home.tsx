@@ -87,6 +87,9 @@ export default function Home() {
             <button className="px-8 py-3 border border-primary text-primary font-ui rounded-lg hover:bg-primary/10 transition-colors">
               Voir les Résultats
             </button>
+            <a href="https://sawas-ai.art/neuroscience2026/" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-secondary text-secondary-foreground font-ui rounded-lg hover:bg-secondary/90 transition-colors inline-block">
+              Docs neuroscience2026
+            </a>
           </div>
         </div>
       </section>
